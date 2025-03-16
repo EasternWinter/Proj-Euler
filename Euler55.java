@@ -1,5 +1,5 @@
 import java.math.BigInteger;
-
+ 
 public class Euler55 {
     public static String reverse(BigInteger num)
     {
