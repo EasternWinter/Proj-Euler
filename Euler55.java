@@ -1,7 +1,9 @@
+import java.math.BigInteger;
+
 public class Euler55 {
-    public static String reverse(int num)
+    public static String reverse(BigInteger num)
     {
-        String n = Integer.toString(num);
+        String n = String.valueOf(num);
         String rev = "";
         for (int i = n.length() - 1; i >= 0; i--)
         {
@@ -9,18 +11,19 @@ public class Euler55 {
         }
         return rev;
     }
-    public static Boolean isPalindrome(int num)
+    public static Boolean isPalindrome(BigInteger num)
     {
         String rev = reverse(num);
-        return rev.equals(Integer.toString(num));
+        String n = String.valueOf(num);
+        return rev.equals(n);
     }
     public static Boolean isLychrel(int num)
     {
-        int ori = num;
-        int rev = Integer.parseInt(reverse(num));
-        for (int i = 0; i < 50; i++)
+        BigInteger ori = BigInteger.valueOf(num);
+        BigInteger rev = BigInteger.valueOf(Integer.parseInt(reverse(ori)));
+        for (int i = 0; i < 49; i++)
         {
-            int sum = ori + rev;
+            BigInteger sum = ori.add(rev);
             if (isPalindrome(sum))
             {
                 return true;
@@ -28,7 +31,7 @@ public class Euler55 {
             else
             {
                 ori = sum;
-                rev = Integer.parseInt(reverse(sum));
+                rev = BigInteger.valueOf(Integer.parseInt(reverse(sum)));
             }
         }
         return false;
