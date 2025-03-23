@@ -1,5 +1,5 @@
 import java.math.BigInteger;
- 
+
 public class Euler55 {
     public static String reverse(BigInteger num)
     {
@@ -20,21 +20,21 @@ public class Euler55 {
     public static Boolean isLychrel(int num)
     {
         BigInteger ori = BigInteger.valueOf(num);
-        BigInteger rev = BigInteger.valueOf(Integer.parseInt(reverse(ori)));
-        for (int i = 0; i < 49; i++)
+        BigInteger rev = new BigInteger(reverse(ori));
+        for (int i = 1; i < 50; i++)
         {
             BigInteger sum = ori.add(rev);
             if (isPalindrome(sum))
             {
-                return true;
+                return false;
             }
             else
             {
                 ori = sum;
-                rev = BigInteger.valueOf(Integer.parseInt(reverse(sum)));
+                rev = new BigInteger(reverse(sum));
             }
         }
-        return false;
+        return true;
     }
     public static int sol()
     {
