@@ -1,5 +1,3 @@
-//import java.math.BigInteger;
-
 public class Euler58 {
     public static boolean isPrime(int n)
     {
