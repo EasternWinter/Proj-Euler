@@ -1,5 +1,5 @@
 public class EulerRunner {
     public static void main(String[] args) {
-        System.out.println(Euler57.sol());
+        System.out.println(Euler58.sol());
     }
 }

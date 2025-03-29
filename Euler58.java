@@ -12,24 +12,19 @@ public class Euler58 {
         }
         return true;
     }
-    public static int amountPrim(int start, int end)
+    public static int sol()
     {
-        int count = 0;
-        for (int i = start; i <= end; i++)
+        int numPrimes = 0;
+        for(int i = 1; ;i+=2)
         {
-            if(isPrime(i))
-            {count++;}
-        }
-        return count;
-    }
-    public static void sol()
-    {
-        int primCount = 8;
-        int start = 0;
-        for(int i = 8; ; i+=2)
-        {
-            int end = i*i;
-            primCount += amountPrim(start, end);
+            for(int j = 0; j<4; j++)
+            {
+                if(isPrime(i*i-j*(i-1)))
+                {numPrimes++;}
+            }
+            //i*2-1 is number of elements in the diagonals.
+            if(i>1 && numPrimes*10<i*2-1)
+            {return i;}
         }
     }
 }
